@@ -30,6 +30,7 @@ import Duckling.Regex.Types
 import Duckling.Types
 import Duckling.TimeGrain.Types
 import qualified Duckling.Numeral.Types as TNumeral
+import qualified Duckling.TimeGrain.Types as TG
 
 grainsMap :: HashMap Text Grain
 grainsMap = HashMap.fromList
@@ -40,15 +41,25 @@ grainsMap = HashMap.fromList
   , ("минуты", Minute)
   ]
 
+ruleDurationQuarterOfAnHour :: Rule
+ruleDurationQuarterOfAnHour = Rule
+  { name = "quarter of an hour"
+  , pattern =
+    [ regex "(1/4|четверть) часа"
+    ]
+  , prod = \_ -> Just . Token Duration $ duration TG.Minute 15
+  }
+
+
 -- TODO: Single-word composition (#110)
 ruleHalves :: Rule
 ruleHalves = Rule
   { name = "half of a grain"
   , pattern =
-    [ regex "пол\\s?(года|месяца|дня|часа|минуты)"
+    [ regex "пол(овин(а|у|ы))?\\s?(года|месяца|дня|часа|минуты)"
     ]
   , prod = \tokens -> case tokens of
-      (Token RegexMatch (GroupMatch (x:_)):_) -> do
+      (Token RegexMatch (GroupMatch (_:_:x:_)):_) -> do
         grain <- HashMap.lookup (Text.toLower x) grainsMap
         Token Duration <$> timesOneAndAHalf grain 0
       _ -> Nothing
@@ -115,4 +126,5 @@ rules =
   , ruleNumeralQuotes
   , ruleGrainAsDuration
   , ruleHalves
+  , ruleDurationQuarterOfAnHour
   ]

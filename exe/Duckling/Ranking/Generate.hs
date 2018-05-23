@@ -48,6 +48,7 @@ import qualified Duckling.Time.NL.Corpus as NLTime
 import qualified Duckling.Time.PL.Corpus as PLTime
 import qualified Duckling.Time.PT.Corpus as PTTime
 import qualified Duckling.Time.RO.Corpus as ROTime
+import qualified Duckling.Time.RU.Corpus as RUTime
 import qualified Duckling.Time.SV.Corpus as SVTime
 import qualified Duckling.Time.VI.Corpus as VITime
 import qualified Duckling.Time.ZH.Corpus as ZHTime
@@ -187,7 +188,7 @@ getCorpusForLang NL = NLTime.corpus
 getCorpusForLang PL = PLTime.corpus
 getCorpusForLang PT = PTTime.corpus
 getCorpusForLang RO = ROTime.corpus
-getCorpusForLang RU = (testContext, testOptions, [])
+getCorpusForLang RU = RUTime.corpus
 getCorpusForLang SV = SVTime.corpus
 getCorpusForLang TA = (testContext, testOptions, [])
 getCorpusForLang TR = (testContext, testOptions, [])

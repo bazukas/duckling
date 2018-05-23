@@ -32,26 +32,33 @@ allExamples = concat
   , examples (NumeralValue 1)
              [ "1"
              , "один"
+             , "одного"
              ]
   , examples (NumeralValue 2)
              [ "2"
              , "02"
              , "два"
+             , "двух"
              ]
   , examples (NumeralValue 3)
              [ "3"
              , "три"
              , "03"
+             , "трех"
+             , "трёх"
              ]
   , examples (NumeralValue 4)
              [ "4"
              , "четыре"
+             , "четырех"
+             , "четырёх"
              , "04"
              ]
   , examples (NumeralValue 5)
              [ "пять"
              , "5"
              , "05"
+             , "пяти"
              ]
   , examples (NumeralValue 33)
              [ "33"

@@ -507,6 +507,8 @@ library
                      , Duckling.Temperature.PT.Rules
                      , Duckling.Temperature.RO.Corpus
                      , Duckling.Temperature.RO.Rules
+                     , Duckling.Temperature.RU.Corpus
+                     , Duckling.Temperature.RU.Rules
                      , Duckling.Temperature.TR.Corpus
                      , Duckling.Temperature.TR.Rules
                      , Duckling.Temperature.ZH.Corpus
@@ -576,6 +578,8 @@ library
                      , Duckling.Time.PT.Rules
                      , Duckling.Time.RO.Corpus
                      , Duckling.Time.RO.Rules
+                     , Duckling.Time.RU.Corpus
+                     , Duckling.Time.RU.Rules
                      , Duckling.Time.SV.Corpus
                      , Duckling.Time.SV.Rules
                      , Duckling.Time.VI.Corpus
@@ -867,6 +871,7 @@ test-suite duckling-test
                      , Duckling.Temperature.KO.Tests
                      , Duckling.Temperature.PT.Tests
                      , Duckling.Temperature.RO.Tests
+                     , Duckling.Temperature.RU.Tests
                      , Duckling.Temperature.TR.Tests
                      , Duckling.Temperature.ZH.Tests
                      , Duckling.Temperature.Tests
@@ -890,6 +895,7 @@ test-suite duckling-test
                      , Duckling.Time.PL.Tests
                      , Duckling.Time.PT.Tests
                      , Duckling.Time.RO.Tests
+                     , Duckling.Time.RU.Tests
                      , Duckling.Time.SV.Tests
                      , Duckling.Time.VI.Tests
                      , Duckling.Time.ZH.Tests
